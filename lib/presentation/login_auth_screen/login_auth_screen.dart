@@ -4,6 +4,8 @@ import 'package:ian_kwe_mboya_s_application4/core/app_export.dart';
 import 'package:ian_kwe_mboya_s_application4/core/utils/validation_functions.dart';
 import 'package:ian_kwe_mboya_s_application4/widgets/custom_button.dart';
 import 'package:ian_kwe_mboya_s_application4/widgets/custom_text_form_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ian_kwe_mboya_s_application4/domain/googleauth/google_auth_helper.dart';
 
 // ignore_for_file: must_be_immutable
@@ -90,7 +92,7 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
                                   text: "lbl_submit".tr,
                                   margin:
                                       getMargin(left: 20, top: 27, right: 20),
-                                  onTap: onTapSubmit,
+                                  onTap: fireBaseauth,
                                   alignment: Alignment.center),
                               Align(
                                   alignment: Alignment.center,
@@ -235,8 +237,35 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
     Get.toNamed(AppRoutes.signUpPageOneScreen);
   }
 
-  onTapSubmit() {
-    Get.toNamed(AppRoutes.welcomePageScreen);
+  fireBaseauth() async {
+    //TODO Bind email and password controller to below variable
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    await _auth
+        .signInWithEmailAndPassword(
+      email: "", // Bind email Controller
+      password: "", // Bind password Controller
+    )
+        .then((firebaseSignInUser) {
+      if (firebaseSignInUser.user != null) {
+        onSuccessFirebaseSignInResponse(firebaseSignInUser);
+      } else {
+        onErrorFirebaseSignInResponse();
+      }
+    }).catchError((onError) {
+      onErrorFirebaseSignInResponse();
+    });
+  }
+
+  onSuccessFirebaseSignInResponse(UserCredential firebaseSignInUser) {
+    Fluttertoast.showToast(
+      msg: "Successful login",
+    );
+  }
+
+  onErrorFirebaseSignInResponse() {
+    Fluttertoast.showToast(
+      msg: "Invalid login try again",
+    );
   }
 
   onTapRowgoogle() async {

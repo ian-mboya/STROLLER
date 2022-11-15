@@ -4,6 +4,8 @@ import 'package:ian_kwe_mboya_s_application4/core/app_export.dart';
 import 'package:ian_kwe_mboya_s_application4/core/utils/validation_functions.dart';
 import 'package:ian_kwe_mboya_s_application4/widgets/custom_button.dart';
 import 'package:ian_kwe_mboya_s_application4/widgets/custom_text_form_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ian_kwe_mboya_s_application4/domain/googleauth/google_auth_helper.dart';
 
 // ignore_for_file: must_be_immutable
@@ -77,7 +79,7 @@ class SignUpPageTwoScreen extends GetWidget<SignUpPageTwoController> {
                                   margin:
                                       getMargin(left: 20, top: 80, right: 20),
                                   padding: ButtonPadding.PaddingAll15,
-                                  onTap: onTapSignupOne,
+                                  onTap: signupFirebase,
                                   alignment: Alignment.center),
                               Align(
                                   alignment: Alignment.center,
@@ -198,8 +200,35 @@ class SignUpPageTwoScreen extends GetWidget<SignUpPageTwoController> {
                             ]))))));
   }
 
-  onTapSignupOne() {
-    Get.toNamed(AppRoutes.welcomePageScreen);
+  signupFirebase() async {
+    //TODO Bind email and password controller to below variable
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    await _auth
+        .createUserWithEmailAndPassword(
+      email: "", // Bind email Controller
+      password: "", // Bind password Controller
+    )
+        .then((firebaseSignUpUser) {
+      if (firebaseSignUpUser.user != null) {
+        onSuccessFirebaseSignUpResponse(firebaseSignUpUser);
+      } else {
+        onErrorFirebaseSignUpResponse();
+      }
+    }).catchError((onError) {
+      onErrorFirebaseSignUpResponse();
+    });
+  }
+
+  onSuccessFirebaseSignUpResponse(UserCredential firebaseSignUpUser) {
+    Fluttertoast.showToast(
+      msg: "successful signup",
+    );
+  }
+
+  onErrorFirebaseSignUpResponse() {
+    Fluttertoast.showToast(
+      msg: "error try again!!",
+    );
   }
 
   onTapRowgoogle() async {
