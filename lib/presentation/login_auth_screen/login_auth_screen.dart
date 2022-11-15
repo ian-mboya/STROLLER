@@ -155,20 +155,14 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
                                                         left: 44,
                                                         top: 17,
                                                         bottom: 19),
-                                                    child: InkWell(
-                                                        onTap: () {
-                                                          onTapImgGoogle();
-                                                        },
-                                                        child: CommonImageView(
-                                                            svgPath:
-                                                                ImageConstant
-                                                                    .imgGoogle,
-                                                            height:
-                                                                getVerticalSize(
-                                                                    33.00),
-                                                            width:
-                                                                getHorizontalSize(
-                                                                    35.00)))),
+                                                    child: CommonImageView(
+                                                        svgPath: ImageConstant
+                                                            .imgGoogle,
+                                                        height: getVerticalSize(
+                                                            33.00),
+                                                        width:
+                                                            getHorizontalSize(
+                                                                35.00))),
                                                 Padding(
                                                     padding: getPadding(
                                                         left: 24,
@@ -255,13 +249,6 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
     }).catchError((onError) {
       Get.snackbar('Error', onError.toString());
     });
-  }
-
-  onTapImgGoogle() async {
-    var url = 'https://accounts.google.com/';
-    if (!await launch(url)) {
-      throw 'Could not launch https://accounts.google.com/';
-    }
   }
 
   onTapTxtNotregistered() {
