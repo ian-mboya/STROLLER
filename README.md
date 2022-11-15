@@ -18,6 +18,8 @@
 - [System Requirements](#system-requirements)
 - [Figma design guidelines for better accuracy](#figma-design-guideline-for-better-accuracy)
 - [App Navigations](#app-navigations)
+- [Prerequisite for Firebase Configurations](#prerequisite-for-firebase-configurations)
+- [Firebase SignIn/SignUp Authentication Configuration](#firebase-signin/signup-authentication-configuration)
 - [Project Structure](#project-structure)
 - [How you can do code formatting?](#how-you-can-do-code-formatting)
 - [How you can improve the readability of code?](#how-you-can-improve-the-readability-of-code)
@@ -37,6 +39,17 @@ https://docs.dhiwise.com/docs/Designguidelines/intro
 ### App Navigations
 
 Check your app's UI from the AppNavigation screen of your app.
+
+### Prerequisite for Firebase Configurations
+
+- FlutterFire_CLI (If don't have then follow the instruction: https://firebase.google.com/docs/flutter/setup?platform=ios
+- At the root of the project directory run `flutterfire configure` command.
+                    
+### Firebase SignIn/SignUp Authentication Configuration
+
+Steps:
+- At the root of flutter project run flutterfire configure
+- Enable the authentication provider of firebase project
 
 ### Project Structure
 
