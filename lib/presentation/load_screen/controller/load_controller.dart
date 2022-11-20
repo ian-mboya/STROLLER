@@ -1,5 +1,5 @@
-import '/core/app_export.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/load_screen/models/load_model.dart';
+import 'package:stroller/core/app_export.dart';
+import 'package:stroller/presentation/load_screen/models/load_model.dart';
 
 class LoadController extends GetxController {
   Rx<LoadModel> loadModelObj = LoadModel().obs;

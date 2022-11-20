@@ -1,5 +1,5 @@
-import '/core/app_export.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/camera_window_screen/models/camera_window_model.dart';
+import 'package:stroller/core/app_export.dart';
+import 'package:stroller/presentation/camera_window_screen/models/camera_window_model.dart';
 
 class CameraWindowController extends GetxController {
   Rx<CameraWindowModel> cameraWindowModelObj = CameraWindowModel().obs;

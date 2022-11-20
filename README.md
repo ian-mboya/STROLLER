@@ -1,5 +1,5 @@
 
-# ian_kwe_mboya_s_application4
+# stroller
 
 <div>
   <h1 align="center">Getting Started with Flutter 🚀 </h1>
@@ -18,6 +18,7 @@
 - [System Requirements](#system-requirements)
 - [Figma design guidelines for better accuracy](#figma-design-guideline-for-better-accuracy)
 - [App Navigations](#app-navigations)
+- [Google Authentication Configuration](#google-authentication-configuration)
 - [Prerequisite for Firebase Configurations](#prerequisite-for-firebase-configurations)
 - [Firebase SignIn/SignUp Authentication Configuration](#firebase-signin/signup-authentication-configuration)
 - [Project Structure](#project-structure)
@@ -39,6 +40,13 @@ https://docs.dhiwise.com/docs/Designguidelines/intro
 ### App Navigations
 
 Check your app's UI from the AppNavigation screen of your app.
+
+### Google Authentication Configuration
+
+Steps:
+- Follow the steps on https://pub.dev/packages/google_sign_in for Google sign-in.
+- For iOS:
+    - Download the GoogleService-Info.plist  file. Drag and drop the downloaded file into the Runner subfolder and update Info.plist  file.
 
 ### Prerequisite for Firebase Configurations
 

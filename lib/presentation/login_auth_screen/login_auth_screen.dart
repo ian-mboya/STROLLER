@@ -1,12 +1,12 @@
 import 'controller/login_auth_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:ian_kwe_mboya_s_application4/core/app_export.dart';
-import 'package:ian_kwe_mboya_s_application4/core/utils/validation_functions.dart';
-import 'package:ian_kwe_mboya_s_application4/widgets/custom_button.dart';
-import 'package:ian_kwe_mboya_s_application4/widgets/custom_text_form_field.dart';
+import 'package:stroller/core/app_export.dart';
+import 'package:stroller/core/utils/validation_functions.dart';
+import 'package:stroller/widgets/custom_button.dart';
+import 'package:stroller/widgets/custom_text_form_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:ian_kwe_mboya_s_application4/domain/googleauth/google_auth_helper.dart';
+import 'package:stroller/domain/googleauth/google_auth_helper.dart';
 
 // ignore_for_file: must_be_immutable
 class LoginAuthScreen extends GetWidget<LoginAuthController> {
@@ -75,7 +75,7 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
                                   alignment: Alignment.centerLeft,
                                   child: GestureDetector(
                                       onTap: () {
-                                        onTapTxtForgotpassword();
+                                        onTapForgotPassword1();
                                       },
                                       child: Padding(
                                           padding: getPadding(
@@ -134,7 +134,7 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
                                   alignment: Alignment.center,
                                   child: GestureDetector(
                                       onTap: () {
-                                        onTapRowgoogle();
+                                        onTapRowgoogle1();
                                       },
                                       child: Container(
                                           margin: getMargin(
@@ -184,7 +184,7 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
                                   alignment: Alignment.centerLeft,
                                   child: GestureDetector(
                                       onTap: () {
-                                        onTapTxtNotregistered();
+                                        onTapNotregistered1();
                                       },
                                       child: Container(
                                           margin: getMargin(
@@ -233,7 +233,7 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
                             ]))))));
   }
 
-  onTapTxtForgotpassword() {
+  onTapForgotPassword1() {
     Get.toNamed(AppRoutes.signUpPageOneScreen);
   }
 
@@ -257,9 +257,7 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
   }
 
   onSuccessFirebaseSignInResponse(UserCredential firebaseSignInUser) {
-    Fluttertoast.showToast(
-      msg: "Successful login",
-    );
+    Get.offAllNamed(AppRoutes.welcomePageScreen);
   }
 
   onErrorFirebaseSignInResponse() {
@@ -268,7 +266,7 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
     );
   }
 
-  onTapRowgoogle() async {
+  onTapRowgoogle1() async {
     await GoogleAuthHelper().googleSignInProcess().then((googleUser) {
       if (googleUser != null) {
         //TODO Actions to be performed after signin
@@ -280,7 +278,7 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
     });
   }
 
-  onTapTxtNotregistered() {
+  onTapNotregistered1() {
     Get.toNamed(AppRoutes.signUpPageOneScreen);
   }
 }

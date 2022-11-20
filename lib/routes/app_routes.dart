@@ -1,19 +1,19 @@
-import 'package:ian_kwe_mboya_s_application4/presentation/load_screen/load_screen.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/load_screen/binding/load_binding.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/login_auth_screen/login_auth_screen.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/login_auth_screen/binding/login_auth_binding.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/sign_up_page_one_screen/sign_up_page_one_screen.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/sign_up_page_one_screen/binding/sign_up_page_one_binding.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/welcome_page_screen/welcome_page_screen.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/welcome_page_screen/binding/welcome_page_binding.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/camera_window_screen/camera_window_screen.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/camera_window_screen/binding/camera_window_binding.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/load_screen_one_screen/load_screen_one_screen.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/load_screen_one_screen/binding/load_screen_one_binding.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/sign_up_page_two_screen/sign_up_page_two_screen.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/sign_up_page_two_screen/binding/sign_up_page_two_binding.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/app_navigation_screen/app_navigation_screen.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
+import 'package:stroller/presentation/load_screen/load_screen.dart';
+import 'package:stroller/presentation/load_screen/binding/load_binding.dart';
+import 'package:stroller/presentation/login_auth_screen/login_auth_screen.dart';
+import 'package:stroller/presentation/login_auth_screen/binding/login_auth_binding.dart';
+import 'package:stroller/presentation/sign_up_page_one_screen/sign_up_page_one_screen.dart';
+import 'package:stroller/presentation/sign_up_page_one_screen/binding/sign_up_page_one_binding.dart';
+import 'package:stroller/presentation/welcome_page_screen/welcome_page_screen.dart';
+import 'package:stroller/presentation/welcome_page_screen/binding/welcome_page_binding.dart';
+import 'package:stroller/presentation/camera_window_screen/camera_window_screen.dart';
+import 'package:stroller/presentation/camera_window_screen/binding/camera_window_binding.dart';
+import 'package:stroller/presentation/load_screen_one_screen/load_screen_one_screen.dart';
+import 'package:stroller/presentation/load_screen_one_screen/binding/load_screen_one_binding.dart';
+import 'package:stroller/presentation/sign_up_page_two_screen/sign_up_page_two_screen.dart';
+import 'package:stroller/presentation/sign_up_page_two_screen/binding/sign_up_page_two_binding.dart';
+import 'package:stroller/presentation/app_navigation_screen/app_navigation_screen.dart';
+import 'package:stroller/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {

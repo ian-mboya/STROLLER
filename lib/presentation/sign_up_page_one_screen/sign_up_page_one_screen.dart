@@ -1,10 +1,10 @@
 import 'controller/sign_up_page_one_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:ian_kwe_mboya_s_application4/core/app_export.dart';
-import 'package:ian_kwe_mboya_s_application4/core/utils/validation_functions.dart';
-import 'package:ian_kwe_mboya_s_application4/widgets/custom_button.dart';
-import 'package:ian_kwe_mboya_s_application4/widgets/custom_text_form_field.dart';
-import 'package:ian_kwe_mboya_s_application4/domain/googleauth/google_auth_helper.dart';
+import 'package:stroller/core/app_export.dart';
+import 'package:stroller/core/utils/validation_functions.dart';
+import 'package:stroller/widgets/custom_button.dart';
+import 'package:stroller/widgets/custom_text_form_field.dart';
+import 'package:stroller/domain/googleauth/google_auth_helper.dart';
 
 // ignore_for_file: must_be_immutable
 class SignUpPageOneScreen extends GetWidget<SignUpPageOneController> {
@@ -122,20 +122,14 @@ class SignUpPageOneScreen extends GetWidget<SignUpPageOneController> {
                                                         left: 44,
                                                         top: 17,
                                                         bottom: 19),
-                                                    child: InkWell(
-                                                        onTap: () {
-                                                          onTapImgGoogle();
-                                                        },
-                                                        child: CommonImageView(
-                                                            svgPath:
-                                                                ImageConstant
-                                                                    .imgGoogle,
-                                                            height:
-                                                                getVerticalSize(
-                                                                    33.00),
-                                                            width:
-                                                                getHorizontalSize(
-                                                                    35.00)))),
+                                                    child: CommonImageView(
+                                                        svgPath: ImageConstant
+                                                            .imgGoogle,
+                                                        height: getVerticalSize(
+                                                            33.00),
+                                                        width:
+                                                            getHorizontalSize(
+                                                                35.00))),
                                                 Padding(
                                                     padding: getPadding(
                                                         left: 24,
@@ -206,12 +200,5 @@ class SignUpPageOneScreen extends GetWidget<SignUpPageOneController> {
     }).catchError((onError) {
       Get.snackbar('Error', onError.toString());
     });
-  }
-
-  onTapImgGoogle() async {
-    var url = 'https://accounts.google.com/';
-    if (!await launch(url)) {
-      throw 'Could not launch https://accounts.google.com/';
-    }
   }
 }

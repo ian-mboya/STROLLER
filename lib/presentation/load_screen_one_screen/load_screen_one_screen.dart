@@ -1,7 +1,7 @@
 import 'controller/load_screen_one_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:ian_kwe_mboya_s_application4/core/app_export.dart';
-import 'package:ian_kwe_mboya_s_application4/widgets/custom_button.dart';
+import 'package:stroller/core/app_export.dart';
+import 'package:stroller/widgets/custom_button.dart';
 
 class LoadScreenOneScreen extends GetWidget<LoadScreenOneController> {
   @override

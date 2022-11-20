@@ -1,5 +1,5 @@
-import 'package:ian_kwe_mboya_s_application4/core/app_export.dart';
-import 'package:ian_kwe_mboya_s_application4/data/apiClient/api_client.dart';
+import 'package:stroller/core/app_export.dart';
+import 'package:stroller/data/apiClient/api_client.dart';
 import 'package:firebase_core/firebase_core.dart';
 import '../../firebase_options.dart';
 

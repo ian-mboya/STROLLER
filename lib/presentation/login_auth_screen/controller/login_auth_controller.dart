@@ -1,5 +1,5 @@
-import '/core/app_export.dart';
-import 'package:ian_kwe_mboya_s_application4/presentation/login_auth_screen/models/login_auth_model.dart';
+import 'package:stroller/core/app_export.dart';
+import 'package:stroller/presentation/login_auth_screen/models/login_auth_model.dart';
 import 'package:flutter/material.dart';
 
 class LoginAuthController extends GetxController {

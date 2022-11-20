@@ -1,12 +1,12 @@
 import 'controller/sign_up_page_two_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:ian_kwe_mboya_s_application4/core/app_export.dart';
-import 'package:ian_kwe_mboya_s_application4/core/utils/validation_functions.dart';
-import 'package:ian_kwe_mboya_s_application4/widgets/custom_button.dart';
-import 'package:ian_kwe_mboya_s_application4/widgets/custom_text_form_field.dart';
+import 'package:stroller/core/app_export.dart';
+import 'package:stroller/core/utils/validation_functions.dart';
+import 'package:stroller/widgets/custom_button.dart';
+import 'package:stroller/widgets/custom_text_form_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:ian_kwe_mboya_s_application4/domain/googleauth/google_auth_helper.dart';
+import 'package:stroller/domain/googleauth/google_auth_helper.dart';
 
 // ignore_for_file: must_be_immutable
 class SignUpPageTwoScreen extends GetWidget<SignUpPageTwoController> {
@@ -220,9 +220,7 @@ class SignUpPageTwoScreen extends GetWidget<SignUpPageTwoController> {
   }
 
   onSuccessFirebaseSignUpResponse(UserCredential firebaseSignUpUser) {
-    Fluttertoast.showToast(
-      msg: "successful signup",
-    );
+    Get.offNamed(AppRoutes.welcomePageScreen);
   }
 
   onErrorFirebaseSignUpResponse() {
