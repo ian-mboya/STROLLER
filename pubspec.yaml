@@ -8,6 +8,8 @@ dependencies:
     sdk: flutter
   get: ^4.6.5
   connectivity_plus: ^2.3.6
+  camera:  ^0.5.8+5
+  
   shared_preferences: ^2.0.15
   cached_network_image: ^3.2.1
   flutter_svg: ^0.22.0
@@ -27,6 +29,8 @@ flutter:
   assets: 
     - assets/
     - assets/images/
+    - assets/detect.tflite
+    - assets/labelmap.txt
   fonts: 
     - family: Poppins
       fonts: 

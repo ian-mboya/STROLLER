@@ -154,8 +154,8 @@ class WelcomePageScreen extends GetWidget<WelcomePageController> {
                     ])))));
   }
 
-  onTapLogout1() {
-    Get.toNamed(AppRoutes.loadScreenOneScreen);
+  onTapLogout1() async {
+    Get.offAllNamed(AppRoutes.loadScreenOneScreen);
   }
 
   onTapObjectdetectio1() {
@@ -163,12 +163,6 @@ class WelcomePageScreen extends GetWidget<WelcomePageController> {
   }
 
   onTapImgCamera() async {
-    await PermissionManager.askForPermission(Permission.camera);
-    await PermissionManager.askForPermission(Permission.storage);
-    List<String?>? imageList = [];
-//TODO: Permission - use imageList for using selected images
-    await FileManager().showModelSheetForImage(getImages: (value) async {
-      imageList = value;
-    });
+    Get.toNamed(AppRoutes.cameraWindowScreen);
   }
 }

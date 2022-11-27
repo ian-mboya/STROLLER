@@ -41,19 +41,18 @@ class SignUpPageTwoScreen extends GetWidget<SignUpPageTwoController> {
                                   width: 390,
                                   focusNode: FocusNode(),
                                   controller: controller.textboxController,
-                                  hintText: "lbl_password".tr,
+                                  hintText: "lbl_email".tr,
                                   margin:
                                       getMargin(left: 20, top: 43, right: 20),
                                   alignment: Alignment.center,
                                   validator: (value) {
                                     if (value == null ||
-                                        (!isValidPassword(value,
+                                        (!isValidEmail(value,
                                             isRequired: true))) {
-                                      return "Please enter valid password";
+                                      return "Please enter valid email";
                                     }
                                     return null;
-                                  },
-                                  isObscureText: true),
+                                  }),
                               CustomTextFormField(
                                   width: 390,
                                   focusNode: FocusNode(),
@@ -205,8 +204,9 @@ class SignUpPageTwoScreen extends GetWidget<SignUpPageTwoController> {
     final FirebaseAuth _auth = FirebaseAuth.instance;
     await _auth
         .createUserWithEmailAndPassword(
-      email: "", // Bind email Controller
-      password: "", // Bind password Controller
+      email: controller.textboxController.text, // Bind email Controller
+      password:
+          controller.textboxOneController.text, // Bind password Controller
     )
         .then((firebaseSignUpUser) {
       if (firebaseSignUpUser.user != null) {

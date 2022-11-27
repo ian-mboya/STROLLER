@@ -242,8 +242,9 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
     final FirebaseAuth _auth = FirebaseAuth.instance;
     await _auth
         .signInWithEmailAndPassword(
-      email: "", // Bind email Controller
-      password: "", // Bind password Controller
+      email: controller.textboxController.text, // Bind email Controller
+      password:
+          controller.textboxOneController.text, // Bind password Controller
     )
         .then((firebaseSignInUser) {
       if (firebaseSignInUser.user != null) {
@@ -270,6 +271,7 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
     await GoogleAuthHelper().googleSignInProcess().then((googleUser) {
       if (googleUser != null) {
         //TODO Actions to be performed after signin
+
       } else {
         Get.snackbar('Error', 'user data is empty');
       }
@@ -279,6 +281,6 @@ class LoginAuthScreen extends GetWidget<LoginAuthController> {
   }
 
   onTapNotregistered1() {
-    Get.toNamed(AppRoutes.signUpPageOneScreen);
+    Get.offAllNamed(AppRoutes.signUpPageTwoScreen);
   }
 }

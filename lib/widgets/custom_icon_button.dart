@@ -82,7 +82,7 @@ class CustomIconButton extends StatelessWidget {
   _setColor() {
     switch (variant) {
       default:
-        return ColorConstant.green200;
+        return ColorConstant.green500;
     }
   }
 
