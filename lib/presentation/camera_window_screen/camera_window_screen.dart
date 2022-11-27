@@ -77,7 +77,6 @@ class CameraWindowScreen extends GetWidget<CameraWindowController> {
                               width: getSize(339.00),
                               margin: getMargin(left: 21, top: 45, right: 21),
                               decoration: BoxDecoration(
-                                  color: ColorConstant.bluegray100,
                                   borderRadius: BorderRadius.circular(
                                       getHorizontalSize(169.50))))),
                       CustomButton(
